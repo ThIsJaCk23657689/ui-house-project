@@ -7,7 +7,9 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				
+				'primary': {
+					100: '#119ECC', // 主題淺藍
+				}
 			}
 		},
 	},
