@@ -9,7 +9,13 @@ export default {
 			colors: {
 				'primary': {
 					100: '#119ECC', // 主題淺藍
+					200: '#c9caca', // 主題淺灰
+					300: '#555656', // 主題深灰
 				}
+			},
+			backgroundImage: {
+				'map-button-to-r': 'linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%)',
+				'map-button-to-l': 'linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%)',
 			}
 		},
 	},

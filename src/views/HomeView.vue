@@ -46,7 +46,7 @@ onMounted(() => {
 		} else {
 			clearInterval(interval);
 		}
-	}, 1000);
+	}, 800);
 });
 
 </script>
@@ -97,7 +97,7 @@ onMounted(() => {
 
 .test-enter-active,
 .test-leave-active {
-	transition: all 0.8s ease-out;
+	transition: all 0.7s ease-out;
 }
 
 .test-enter-from,
