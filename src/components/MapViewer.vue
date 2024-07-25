@@ -7,6 +7,7 @@ import ImageModalViwer from '@/components/ImageModalViwer.vue';
 const props = defineProps<{
     imageUrl: string
     spotData: Array<{
+        id: number,
         name: string
         top: number
         left: number,
@@ -186,10 +187,10 @@ function closeModal() {
 
 @keyframes flash {
     from {
-        background-color: #f8ec00;
+        background-color: #119ECC;
     }
     to {
-        background-color: #fcfbed;
+        background-color: #14dc78;
     }
 }
 
