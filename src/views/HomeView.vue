@@ -59,7 +59,7 @@ onMounted(() => {
 			</Transition>
 		</div>
 		<div class="w-1/2 h-full flex flex-col bg-primary-100">
-			<div class="w-full h-full flex flex-col ml-10">
+			<div class="w-full h-full flex flex-col xl:ml-2 2xl:ml-10">
 				<div class="w-full h-1/2 flex justify-start items-end">
 					<Transition name="slide-fade-down" appear>
 						<img src="@/assets/images/logo.png" alt="" class="object-cover left-0 top-0" style="width: 52%;">
@@ -71,7 +71,7 @@ onMounted(() => {
 							:key="index" 
 							:class="{ 'menu-item mr-8': index !== menuItems.length - 1 }">
 							<RouteButton :to="{ name: item.routeName }" class="group relative">
-								<div class="flex flex-row items-center mr-10 h-8">
+								<div class="flex flex-row items-center mr-8 h-8">
 									<span class="text-xl text-zinc-200 chinese-font font-light group-hover:text-white group-hover:mb-2 transition-300-out mr-2">{{ item.chineseText }}</span>
 									<span class="text-md text-zinc-200 english-font group-hover:text-white group-hover:mb-2 transition-300-out">{{ item.englishText }}</span>
 								</div>
