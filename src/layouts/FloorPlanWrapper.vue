@@ -115,15 +115,17 @@ function hoverRoom(index: number) {
             @mouseenter="handleMouseEnter"
             @wheel="handleWheel">
 
-            <div v-if="hasBg" class="w-4/5 relative">
+            <div v-if="isFloor == true && hasBg == true" class="w-4/5 relative">
                 <!-- 標準層平面圖背景 -->
                 <FloorPlanBackground class="w-full absolute inset-0" :current-hover-index="currentHoverType" style="padding-right: 5px;"></FloorPlanBackground>
                 <img :src="imageUrl" alt="Image" class="object-cover relative z-10" style="transform: scale(1.03); translate: 14px -10px;"/>
             </div>
             <div v-else-if="isFloor == false && isAera == true" class="w-full h-full flex justify-start items-center" style="padding-left: 8rem;">
+                <!-- 標準層的每一個獨立房型 -->
                 <img :src="imageUrl" alt="Image" class="object-cover" style="width: 75%;" />
             </div>
             <div v-else-if="isFloor == true && isBasement == true" class="w-4/6 flex justify-center items-center">
+                <!-- 地下室 -->
                 <img :src="imageUrl" alt="Image" class="object-cover mt-24" />
             </div>
             <div v-else class="w-full h-full flex justify-center items-center">
@@ -150,18 +152,28 @@ function hoverRoom(index: number) {
 
     <!-- 右邊面板 -->
     <div class="w-40 h-full absolute right-0 top-0 z-30 flex flex-col justify-center items-end">
-        <div class="w-full h-full flex relative" style="font-family: '微軟正黑體'">
+        <div class="w-full h-full flex flex-col justify-start items-start relative" style="font-family: '微軟正黑體'">
 
             <div class="flex flex-col mt-48 ml-4">
-                <div v-if="isAera == false && isBasement == false" class="absolute flex flex-col justify-center items-center">
+                <div v-if="isAera == false" class="flex flex-col justify-center items-center mb-48">
                     <div class="mb-6">
                         <span v-if="title == '1'" class="text-primary-300 text-8xl tracking-tighter" style="font-family: Arial, Helvetica, sans-serif;">1F</span>
                         <span v-else-if="title == 'R'" class="text-primary-300 text-8xl font-bold">RF</span>
                         <span v-else-if="title == 'std'" class="text-zinc-400 text-6xl font-bold vertical-text">標準層</span>
+                        <span v-else-if="isBasement == true" class="text-primary-300 text-8xl font-bold">{{ title }}</span>
                     </div>
                     <div class="title-image-text">
                         <span class="text-primary-300 text-3xl font-bold">平面配置</span>
                     </div>
+                </div>
+
+                <!-- 地下室會出現的按鈕 -->
+                <div v-if="buttons" class="flex flex-col justify-center items-center">
+                    <template v-for="(button, index) in buttons">
+                        <button v-if="!button.isActive" class="p-1 border-2 border-primary-200 bg-primary-200 text-primary-300  transition-300-out mb-6 rounded-full hover:bg-zinc-300 hover:text-zinc-800" @click="$emit('basementButton', index)">
+                            <span class="text-2xl">{{ button.text }}</span>
+                        </button>
+                    </template>
                 </div>
             </div>
 

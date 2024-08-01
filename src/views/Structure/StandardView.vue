@@ -5,7 +5,7 @@ const mainImage = new URL('@/assets/images/floorplans/standard_foreground.png', 
 
 <template>
 <div class="w-full h-full relative flex flex-row justify-center items-center">
-    <FloorPlanWrapper :image-url="mainImage" :title="'std'" :is-floor="false" :has-bg="true">
+    <FloorPlanWrapper :image-url="mainImage" :title="'std'" :is-floor="true" :has-bg="true">
         <div class="title-container absolute flex flex-col justify-center items-center">
             <span class="text-3xl font-bold text-zinc-700 mb-1 vertical-text" style="font-family: '微軟正黑體';">復興路二段</span>
             <span class="text-2xl font-bold text-zinc-700 mb-1" style="font-family: '微軟正黑體';">71</span>
