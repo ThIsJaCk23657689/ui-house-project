@@ -16,6 +16,7 @@ import ApperanceView from '@/views/Structure/ApperanceView.vue'
 import FirstFloorView from '@/views/Structure/FirstFloorView.vue'
 import RoofView from '@/views/Structure/RoofView.vue'
 import StandardView from '@/views/Structure/StandardView.vue'
+import StandardIndividualView from '@/views/Structure/StandardIndividualView.vue'
 import BasementView from '@/views/Structure/BasementView.vue'
 
 const router = createRouter({
@@ -73,6 +74,12 @@ const router = createRouter({
 							path: 'standard',
 							name: 'standard',
 							component: StandardView,
+						},
+						{
+							path: 'standard-individual/:type?',
+							name: 'standard-individual',
+							component: StandardIndividualView,
+							props: true,
 						},
 						{
 							path: 'basement',

@@ -116,8 +116,9 @@ function hoverRoom(index: number) {
             @wheel="handleWheel">
 
             <div v-if="hasBg" class="w-4/5 relative">
+                <!-- 標準層平面圖背景 -->
                 <FloorPlanBackground class="w-full absolute inset-0" :current-hover-index="currentHoverType" style="padding-right: 5px;"></FloorPlanBackground>
-                <img :src="imageUrl" alt="Image" class="object-cover relative z-10"/>
+                <img :src="imageUrl" alt="Image" class="object-cover relative z-10" style="transform: scale(1.03); translate: 14px -10px;"/>
             </div>
             <div v-else-if="isFloor == false && isAera == true" class="w-full h-full flex justify-start items-center" style="padding-left: 8rem;">
                 <img :src="imageUrl" alt="Image" class="object-cover" style="width: 75%;" />
@@ -131,6 +132,7 @@ function hoverRoom(index: number) {
             </div>
 
             <div v-if="hasBg" class="w-full h-full absolute top-0 left-0 z-20">
+                <!-- 標準層平面圖 hover 區域 -->
                 <RouterLink :to="{ name: 'standard-individual', params: { type: 'A' } }" class="absolute a-part" @mouseleave="hoverRoom(0)" @mouseenter="hoverRoom(1)"></RouterLink>
                 <RouterLink :to="{ name: 'standard-individual', params: { type: 'B' } }" class="absolute b-part" @mouseleave="hoverRoom(0)" @mouseenter="hoverRoom(2)"></RouterLink>
                 <RouterLink :to="{ name: 'standard-individual', params: { type: 'C' } }" class="absolute c-part" @mouseleave="hoverRoom(0)" @mouseenter="hoverRoom(3)"></RouterLink>
@@ -147,14 +149,15 @@ function hoverRoom(index: number) {
 
 
     <!-- 右邊面板 -->
-    <div class="w-40 h-full absolute right-0 top-0 z-10 flex flex-col justify-center items-end">
+    <div class="w-40 h-full absolute right-0 top-0 z-30 flex flex-col justify-center items-end">
         <div class="w-full h-full flex relative" style="font-family: '微軟正黑體'">
 
             <div class="flex flex-col mt-48 ml-4">
-                <div v-if="isFloor == true && isAera == false && isBasement == false" class="absolute flex flex-col justify-center items-center">
+                <div v-if="isAera == false && isBasement == false" class="absolute flex flex-col justify-center items-center">
                     <div class="mb-6">
                         <span v-if="title == '1'" class="text-primary-300 text-8xl tracking-tighter" style="font-family: Arial, Helvetica, sans-serif;">1F</span>
                         <span v-else-if="title == 'R'" class="text-primary-300 text-8xl font-bold">RF</span>
+                        <span v-else-if="title == 'std'" class="text-zinc-400 text-6xl font-bold vertical-text">標準層</span>
                     </div>
                     <div class="title-image-text">
                         <span class="text-primary-300 text-3xl font-bold">平面配置</span>
@@ -171,7 +174,7 @@ function hoverRoom(index: number) {
     </div>
 
     <!-- 圖片控制面板 -->
-    <div class="control-panel absolute flex flex-col z-20 bottom-16 right-24">
+    <div class="control-panel absolute flex flex-col z-40 bottom-16 right-24">
         <div class="left-area relative flex flex-row items-center justify-center">
             <button class="scale-button" @click="zoomIn">
                 <IconMagnifyingGlassPlus class="h-full text-primary-300"></IconMagnifyingGlassPlus>
@@ -270,45 +273,45 @@ function hoverRoom(index: number) {
 
 
 .a-part {
-    width: 28%;
-    height: 29%;
-    top: 65%;
+    width: 15%;
+    height: 40%;
+    top: 32%;
     left: 10%;
 }
 
 .b-part {
-    width: 27%;
-    height: 29%;
-    top: 65%;
-    left: 38%;
+    width: 19%;
+    height: 19%;
+    top: 29%;
+    left: 25%;
 }
 
 .c-part {
-    width: 24.5%;
-    height: 32%;
-    top: 36%;
-    left: 64.8%;
+    width: 19.5%;
+    height: 18%;
+    top: 30%;
+    left: 51.8%;
 }
 
 .d-part {
-    width: 24.5%;
-    height: 30%;
-    top: 6%;
-    left: 64.8%;
+    width: 19.5%;
+    height: 28%;
+    top: 44%;
+    left: 70.8%;
 }
 
 .e-part {
-    width: 26%;
-    height: 30%;
-    top: 6%;
-    left: 39%;
+    width: 25.9%;
+    height: 19%;
+    top: 53%;
+    left: 44%;
 }
 
 .f-part {
-    width: 26%;
-    height: 29%;
-    top: 36%;
-    left: 12%;
+    width: 19%;
+    height: 19%;
+    top: 53%;
+    left: 25%;
 }
 
 </style>
