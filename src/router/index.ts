@@ -11,6 +11,13 @@ import AboutView from '@/views/AboutView.vue'
 import EnvironmentView from '@/views/Location/EnvironmentView.vue'
 import LifeFunctionView from '@/views/Location/LifeFunctionView.vue'
 
+// Structure 規劃
+import ApperanceView from '@/views/Structure/ApperanceView.vue'
+import FirstFloorView from '@/views/Structure/FirstFloorView.vue'
+import RoofView from '@/views/Structure/RoofView.vue'
+import StandardView from '@/views/Structure/StandardView.vue'
+import BasementView from '@/views/Structure/BasementView.vue'
+
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes: [
@@ -45,6 +52,34 @@ const router = createRouter({
 					path: 'structure',
 					name: 'structure',
 					component: StructureView,
+					redirect: { name: 'apperance' },
+					children: [
+						{
+							path: 'apperance',
+							name: 'apperance',
+							component: ApperanceView,
+						},
+						{
+							path: '1floor',
+							name: '1floor',
+							component: FirstFloorView,
+						},
+						{
+							path: 'roof',
+							name: 'roof',
+							component: RoofView,
+						},
+						{
+							path: 'standard',
+							name: 'standard',
+							component: StandardView,
+						},
+						{
+							path: 'basement',
+							name: 'basement',
+							component: BasementView,
+						},
+					]
 				},
 				{
 					path: 'material',

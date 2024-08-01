@@ -19,11 +19,11 @@ const menuItems = ref([
         englishText: 'Ultra',    
         chineseText: '規劃', 
         subItems: [
-            { name:'apperance', path: '#', text: '外觀3D' },
-            { name:'1floor', path: '#', text: '1F全面平圖' },
-            { name:'roof', path: '#', text: 'RF全面平圖' },
-            { name:'standard', path: '#', text: '標準層' },
-            { name:'basement', path: '#', text: '地下室' }
+            { name:'apperance', path: '/structure/apperance', text: '外觀3D' },
+            { name:'1floor', path: '/structure/1floor', text: '1F全面平圖' },
+            { name:'roof', path: '/structure/roof', text: 'RF全面平圖' },
+            { name:'standard', path: '/structure/standard', text: '標準層' },
+            { name:'basement', path: '/structure/basement', text: '地下室' }
         ]  
     },
 	{ 
