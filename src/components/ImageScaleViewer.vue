@@ -147,8 +147,8 @@ function reset() {
             <div v-for="(imageUrl, index) in imageUrls" :key="index" class="group" @click="changeImageIndex(index)">
                 <div :class="[
                     'dot', 'cursor-pointer', 'mb-8',
-                    { 'group-hover:bg-primary-200 transition-300-out bg-zinc-100': currentIndex !== index },
-                    { 'bg-primary-200': currentIndex === index }
+                    { 'group-hover:bg-primary-100 transition-300-out bg-zinc-400': currentIndex !== index },
+                    { 'bg-primary-300': currentIndex === index }
                 ]">
                 </div>
             </div>
