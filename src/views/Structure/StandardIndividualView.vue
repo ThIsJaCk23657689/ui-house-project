@@ -2,7 +2,6 @@
 import { ref, onMounted, watch } from 'vue';
 import { RouterLink } from 'vue-router'
 import FloorPlanWrapper from '@/layouts/FloorPlanWrapper.vue';
-import CompressIcon from '@/components/icons/CompressIcon.vue';
 
 const props = defineProps(['type']);
 
@@ -10,33 +9,33 @@ const currentType = ref(0);
 const standards = [
     { 
         title: 'A', 
-        url: new URL('@/assets/images/floor-plans/a.jpg', import.meta.url).href, 
-        buttonImg: new URL('@/assets/images/floor-plans/buttons/a.svg', import.meta.url).href 
+        url: new URL('@/assets/images/floorplans/individual/a.png', import.meta.url).href, 
+        buttonImg: new URL('@/assets/images/floorplans/buttons/a.svg', import.meta.url).href 
     },
     { 
         title: 'B', 
-        url: new URL('@/assets/images/floor-plans/b.jpg', import.meta.url).href, 
-        buttonImg: new URL('@/assets/images/floor-plans/buttons/B.svg', import.meta.url).href 
+        url: new URL('@/assets/images/floorplans/individual/b.png', import.meta.url).href, 
+        buttonImg: new URL('@/assets/images/floorplans/buttons/B.svg', import.meta.url).href 
     },
     { 
         title: 'C', 
-        url: new URL('@/assets/images/floor-plans/c.jpg', import.meta.url).href, 
-        buttonImg: new URL('@/assets/images/floor-plans/buttons/c.svg', import.meta.url).href 
+        url: new URL('@/assets/images/floorplans/individual/c.png', import.meta.url).href, 
+        buttonImg: new URL('@/assets/images/floorplans/buttons/c.svg', import.meta.url).href 
     },
     { 
         title: 'D', 
-        url: new URL('@/assets/images/floor-plans/d.jpg', import.meta.url).href, 
-        buttonImg: new URL('@/assets/images/floor-plans/buttons/d.svg', import.meta.url).href 
+        url: new URL('@/assets/images/floorplans/individual/d.png', import.meta.url).href, 
+        buttonImg: new URL('@/assets/images/floorplans/buttons/d.svg', import.meta.url).href 
     },
     { 
         title: 'E', 
-        url: new URL('@/assets/images/floor-plans/e.jpg', import.meta.url).href, 
-        buttonImg: new URL('@/assets/images/floor-plans/buttons/e.svg', import.meta.url).href 
+        url: new URL('@/assets/images/floorplans/individual/e.png', import.meta.url).href, 
+        buttonImg: new URL('@/assets/images/floorplans/buttons/e.svg', import.meta.url).href 
     },
     { 
         title: 'F', 
-        url: new URL('@/assets/images/floor-plans/f.jpg', import.meta.url).href, 
-        buttonImg: new URL('@/assets/images/floor-plans/buttons/f.svg', import.meta.url).href 
+        url: new URL('@/assets/images/floorplans/individual/f.png', import.meta.url).href, 
+        buttonImg: new URL('@/assets/images/floorplans/buttons/f.svg', import.meta.url).href 
     }
 ];
 
@@ -69,82 +68,73 @@ watch(() => props.type, () => {
 </script>
 
 <template>
+<div class="w-full h-full relative flex flex-row justify-center items-center">
     <FloorPlanWrapper :image-url="standards[currentType].url" :title="standards[currentType].title" :is-floor="false" :isAera="true">
-
-        <div class="compress-container absolute flex justify-center items-center">
-            <CompressIcon class="compress w-full h-full" />
-        </div>
-
-        <template v-slot:fixed>
-            <div class="little-plan-container">
-                <img :src="standards[currentType].buttonImg" alt="Image" class="object-cover little-plan" />
-                
-                <RouterLink :to="{ name: 'standard-individual', params: { type: 'A' } }" class="absolute a-part"></RouterLink>
-                <RouterLink :to="{ name: 'standard-individual', params: { type: 'B' } }" class="absolute b-part"></RouterLink>
-                <RouterLink :to="{ name: 'standard-individual', params: { type: 'C' } }" class="absolute c-part"></RouterLink>
-                <RouterLink :to="{ name: 'standard-individual', params: { type: 'D' } }" class="absolute d-part"></RouterLink>
-                <RouterLink :to="{ name: 'standard-individual', params: { type: 'E' } }" class="absolute e-part"></RouterLink>
-                <RouterLink :to="{ name: 'standard-individual', params: { type: 'F' } }" class="absolute f-part"></RouterLink>
-            </div>
-        </template>
-
-        
     </FloorPlanWrapper>
+
+    <div class="little-plan-container">
+        <img :src="standards[currentType].buttonImg" alt="Image" class="object-cover little-plan" />
+        
+        <RouterLink :to="{ name: 'standard-individual', params: { type: 'A' } }" class="absolute a-part"></RouterLink>
+        <RouterLink :to="{ name: 'standard-individual', params: { type: 'B' } }" class="absolute b-part"></RouterLink>
+        <RouterLink :to="{ name: 'standard-individual', params: { type: 'C' } }" class="absolute c-part"></RouterLink>
+        <RouterLink :to="{ name: 'standard-individual', params: { type: 'D' } }" class="absolute d-part"></RouterLink>
+        <RouterLink :to="{ name: 'standard-individual', params: { type: 'E' } }" class="absolute e-part"></RouterLink>
+        <RouterLink :to="{ name: 'standard-individual', params: { type: 'F' } }" class="absolute f-part"></RouterLink>
+    </div>
+
+    <!-- 右側 banner -->
+    <div class="h-full flex justify-end items-center">
+        <div class="h-full flex flex-col justify-end items-center relative">
+            <img src="@/assets/images/right_banner_3.png" alt="" class="h-full object-cover" style="max-width: max-content;">
+        </div>
+    </div>
+</div>
 </template>
 
 <style scoped>
-.compress-container {
-    width: 50px;
-    height: 50px;
-    right: 13%;
-    top: 15%;
-}
-
-.compress {
-    color: #717071;
-}
-
 .little-plan-container {
-    width: 150px;
+    width: 260px;
     position: absolute;
-    bottom: 5%;
-    right: 8%;
+    bottom: 14.58%;
+    right: 7.5%;
+    z-index: 100;
 }
 
 .a-part {
-    width: 33.3333%;
-    height: 33.3333%;
-    top: 66.6666%;
+    width: 17%;
+    height: 100%;
+    top: 0%;
     left: 0%;
 }
 .b-part {
-    width: 33.3333%;
-    height: 33.3333%;
-    top: 66.6666%;
-    left: 33.3333%;
+    width: 24%;
+    height: 42%;
+    top: 0%;
+    left: 17%;
 }
 .c-part {
-    width: 33.3333%;
-    height: 33.3333%;
-    top: 33.3333%;
-    left: 66.6666%;
+    width: 24%;
+    height: 42%;
+    top: 0%;
+    left: 51%;
 }
 .d-part {
-    width: 33.3333%;
-    height: 33.3333%;
+    width: 25%;
+    height: 100%;
     top: 0%;
-    left: 66.6666%;
+    left: 75%;
 }
 .e-part {
-    width: 33.3333%;
-    height: 33.3333%;
-    top: 0%;
-    left: 33.3333%;
+    width: 24%;
+    height: 42%;
+    bottom: 0%;
+    left: 51%;
 }
 .f-part {
-    width: 33.3333%;
-    height: 33.3333%;
-    top: 33.3333%;
-    left: 0%;
+    width: 24%;
+    height: 42%;
+    bottom: 0%;
+    left: 17%;
 }
 </style>

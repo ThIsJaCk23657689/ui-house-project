@@ -155,15 +155,17 @@ function hoverRoom(index: number) {
         <div class="w-full h-full flex flex-col justify-start items-start relative" style="font-family: '微軟正黑體'">
 
             <div class="flex flex-col mt-48 ml-4">
-                <div v-if="isAera == false" class="flex flex-col justify-center items-center mb-48">
+                <div class="flex flex-col justify-center items-center mb-48">
                     <div class="mb-6">
                         <span v-if="title == '1'" class="text-primary-300 text-8xl tracking-tighter" style="font-family: Arial, Helvetica, sans-serif;">1F</span>
                         <span v-else-if="title == 'R'" class="text-primary-300 text-8xl font-bold">RF</span>
                         <span v-else-if="title == 'std'" class="text-zinc-400 text-6xl font-bold vertical-text">標準層</span>
                         <span v-else-if="isBasement == true" class="text-primary-300 text-8xl font-bold">{{ title }}</span>
+                        <span v-else-if="isAera == true" class="text-primary-300 text-8xl font-bold">{{ title }}</span>
                     </div>
-                    <div class="title-image-text">
-                        <span class="text-primary-300 text-3xl font-bold">平面配置</span>
+                    <div class="flex flex-col justify-center items-center">
+                        <div v-if="isAera == true" class="text-primary-300 text-3xl font-bold bg-yellow-300 mb-4 rounded-full flex justify-center items-center" style="width: 50px; height: 50px">戶</div>
+                        <span class="text-primary-300 text-3xl font-bold title-image-text">平面配置</span>
                     </div>
                 </div>
 
