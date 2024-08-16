@@ -10,6 +10,7 @@ import AboutView from '@/views/AboutView.vue'
 // Location 地段
 import EnvironmentView from '@/views/Location/EnvironmentView.vue'
 import LifeFunctionView from '@/views/Location/LifeFunctionView.vue'
+import ThirteenView from '@/views/Location/ThirteenView.vue'
 
 // Structure 規劃
 import ApperanceView from '@/views/Structure/ApperanceView.vue'
@@ -18,6 +19,20 @@ import RoofView from '@/views/Structure/RoofView.vue'
 import StandardView from '@/views/Structure/StandardView.vue'
 import StandardIndividualView from '@/views/Structure/StandardIndividualView.vue'
 import BasementView from '@/views/Structure/BasementView.vue'
+
+// Material 選材
+import MaterialMenuView from '@/views/Material/MaterialMenuView.vue'
+import PanasonicKitchenView from '@/views/Material/PanasonicKitchenView.vue'
+import RinnaiView from '@/views/Material/RinnaiView.vue'
+import BoschView from '@/views/Material/BoschView.vue'
+import PanasonicBathroomView from '@/views/Material/PanasonicBathroomView.vue'
+import InnociView from '@/views/Material/InnociView.vue'
+import HansgroheView from '@/views/Material/HansgroheView.vue'
+import LifeGearView from '@/views/Material/LifeGearView.vue'
+import WaferlockView from '@/views/Material/WaferlockView.vue'
+import KronotexView from '@/views/Material/KronotexView.vue'
+import DaikenView from '@/views/Material/DaikenView.vue'
+import ElectricCarView from '@/views/Material/ElectricCarView.vue'
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -46,6 +61,11 @@ const router = createRouter({
 							path: 'lifefunction',
 							name: 'lifefunction',
 							component: LifeFunctionView
+						},
+						{
+							path: 'thirteen',
+							name: 'thirteen',
+							component: ThirteenView
 						}
 					]
 				},
@@ -92,6 +112,69 @@ const router = createRouter({
 					path: 'material',
 					name: 'material',
 					component: MaterialView,
+					redirect: { name: 'material-menu' },
+					children: [
+						{
+							path: 'menu',
+							name: 'material-menu',
+							component: MaterialMenuView,
+						},
+						{
+							path: 'panasonickitchen',
+							name: 'panasonickitchen',
+							component: PanasonicKitchenView,
+						},
+						{
+							path: 'rinnai',
+							name: 'rinnai',
+							component: RinnaiView,
+						},
+						{
+							path: 'bosch',
+							name: 'bosch',
+							component: BoschView,
+						},
+						{
+							path: 'panasonicbathroom',
+							name: 'panasonicbathroom',
+							component: PanasonicBathroomView,
+						},
+						{
+							path: 'innoci',
+							name: 'innoci',
+							component: InnociView,
+						},
+						{
+							path: 'hansgrohe',
+							name: 'hansgrohe',
+							component: HansgroheView,
+						},
+						{
+							path: 'lifegear',
+							name: 'lifegear',
+							component: LifeGearView,
+						},
+						{
+							path: 'waferlock',
+							name: 'waferlock',
+							component: WaferlockView,
+						},
+						{
+							path: 'kronotex',
+							name: 'kronotex',
+							component: KronotexView,
+						},
+						{
+							path: 'daiken',
+							name: 'daiken',
+							component: DaikenView,
+						},
+						{
+							path: 'electriccar',
+							name: 'electriccar',
+							component: ElectricCarView,
+						}
+					]
 				},
 				{
 					path: 'about',

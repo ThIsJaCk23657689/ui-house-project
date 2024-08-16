@@ -11,7 +11,7 @@ const menuItems = ref([
         subItems: [
             { name:'environment', path: '/location/environment', text: '地段' },
 			{ name:'lifefunction', path: '/location/lifefunction', text: '生活機能' },
-			{ name:'raiseup', path: '#', text: '13期大崛起' }
+			{ name:'raiseup', path: '/location/thirteen', text: '13期大崛起' }
         ]  
     },
 	{ 
