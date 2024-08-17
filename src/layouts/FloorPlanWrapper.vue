@@ -118,7 +118,7 @@ function hoverRoom(index: number) {
             <div v-if="isFloor == true && hasBg == true" class="w-4/5 relative">
                 <!-- 標準層平面圖背景 -->
                 <FloorPlanBackground class="w-full absolute inset-0" :current-hover-index="currentHoverType" style="padding-right: 5px;"></FloorPlanBackground>
-                <img :src="imageUrl" alt="Image" class="object-cover relative z-10" style="transform: scale(1.03); translate: 14px -10px;"/>
+                <img :src="imageUrl" alt="Image" class="object-cover relative z-10" style="transform: scale(1.023); translate: 12px -8px;"/>
             </div>
             <div v-else-if="isFloor == false && isAera == true" class="w-full h-full flex justify-start items-center" style="padding-left: 8rem;">
                 <!-- 標準層的每一個獨立房型 -->

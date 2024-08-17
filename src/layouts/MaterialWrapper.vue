@@ -24,14 +24,14 @@ const props = defineProps<{
 const materials = [
     { path: 'panasonickitchen', image: new URL('@/assets/images/materials/side/PanasonicKitchen.png', import.meta.url).href },
     { path: 'rinnai', image: new URL('@/assets/images/materials/side/Rinnai.png', import.meta.url).href },
-    { path: 'bosch', image: new URL('@/assets/images/materials/side/Bosch.png', import.meta.url).href },
+    { path: 'svago', image: new URL('@/assets/images/materials/side/Svago.png', import.meta.url).href },
     { path: 'panasonicbathroom', image: new URL('@/assets/images/materials/side/PanasonicBathroom.png', import.meta.url).href },
     { path: 'innoci', image: new URL('@/assets/images/materials/side/Innoci.png', import.meta.url).href },
     { path: 'hansgrohe', image: new URL('@/assets/images/materials/side/Hansgrohe.png', import.meta.url).href },
     { path: 'lifegear', image: new URL('@/assets/images/materials/side/Lifegear.png', import.meta.url).href },
-    { path: 'waferlock', image: new URL('@/assets/images/materials/side/Waferlock.png', import.meta.url).href },
-    { path: 'kronotex', image: new URL('@/assets/images/materials/side/Kronotex.png', import.meta.url).href },
     { path: 'daiken', image: new URL('@/assets/images/materials/side/Daiken.png', import.meta.url).href },
+    { path: 'lamett', image: new URL('@/assets/images/materials/side/Lamett.png', import.meta.url).href },
+    { path: 'waferlock', image: new URL('@/assets/images/materials/side/Waferlock.png', import.meta.url).href },
     { path: 'electriccar', image: new URL('@/assets/images/materials/side/ElectronCar.png', import.meta.url).href },
 ];
 
@@ -104,6 +104,8 @@ function IsButtonVisible(index: number) {
 <template>
 <div class="w-full h-full flex justify-center items-center">
     <div class="main h-full overflow-hidden relative bg-zinc-100">
+
+        <!-- 子選單按鈕 -->
         <div class="absolute top-20 left-28 flex flex-row gap-3 z-10">
             <template v-for="(button, index) in buttons">
                 <MaterialButton :active="IsButtonActive(index)" :visible="true" @click="OnClassButtonClicked(index)">
@@ -149,14 +151,15 @@ function IsButtonVisible(index: number) {
         </div>
     </div>
 
-    <div class="side h-full flex flex-col justify-around items-center py-14 bg-primary-100">
+    <!-- 側邊選單 -->
+    <div class="side h-full flex flex-col justify-around items-center py-14 bg-primary-400">
         <template v-for="(material, index) in materials" :key="index">
-            <RouteButton v-if="IsSideMenuItemActive(material)" :to="material.path" class="w-full bg-primary-100 flex justify-center items-center opacity-100 transition-300-out py-4">
+            <RouteButton v-if="IsSideMenuItemActive(material)" :to="material.path" class="w-full flex justify-center items-center opacity-100 transition-300-out py-4">
                 <div class="w-4/6 flex justify-center items-center">
                     <img :src="material.image" alt="" class="object-cover w-full">
                 </div>
             </RouteButton>
-            <RouteButton v-else :to="material.path" class="w-full flex justify-center items-center opacity-75 hover:opacity-100 transition-300-out py-4 hover:bg-primary-100">
+            <RouteButton v-else :to="material.path" class="w-full flex justify-center items-center opacity-75 hover:opacity-100 transition-300-out py-4">
                 <div class="w-4/6 flex justify-center items-center">
                     <img :src="material.image" alt="" class="object-cover w-full">
                 </div>

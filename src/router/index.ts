@@ -24,14 +24,14 @@ import BasementView from '@/views/Structure/BasementView.vue'
 import MaterialMenuView from '@/views/Material/MaterialMenuView.vue'
 import PanasonicKitchenView from '@/views/Material/PanasonicKitchenView.vue'
 import RinnaiView from '@/views/Material/RinnaiView.vue'
-import BoschView from '@/views/Material/BoschView.vue'
+import SvagoView from '@/views/Material/SvagoView.vue'
 import PanasonicBathroomView from '@/views/Material/PanasonicBathroomView.vue'
 import InnociView from '@/views/Material/InnociView.vue'
 import HansgroheView from '@/views/Material/HansgroheView.vue'
 import LifeGearView from '@/views/Material/LifeGearView.vue'
-import WaferlockView from '@/views/Material/WaferlockView.vue'
-import KronotexView from '@/views/Material/KronotexView.vue'
 import DaikenView from '@/views/Material/DaikenView.vue'
+import LamettView from '@/views/Material/LamettView.vue'
+import WaferlockView from '@/views/Material/WaferlockView.vue'
 import ElectricCarView from '@/views/Material/ElectricCarView.vue'
 
 const router = createRouter({
@@ -130,9 +130,9 @@ const router = createRouter({
 							component: RinnaiView,
 						},
 						{
-							path: 'bosch',
-							name: 'bosch',
-							component: BoschView,
+							path: 'svago',
+							name: 'svago',
+							component: SvagoView,
 						},
 						{
 							path: 'panasonicbathroom',
@@ -155,19 +155,19 @@ const router = createRouter({
 							component: LifeGearView,
 						},
 						{
-							path: 'waferlock',
-							name: 'waferlock',
-							component: WaferlockView,
-						},
-						{
-							path: 'kronotex',
-							name: 'kronotex',
-							component: KronotexView,
-						},
-						{
 							path: 'daiken',
 							name: 'daiken',
 							component: DaikenView,
+						},
+						{
+							path: 'lamett',
+							name: 'lamett',
+							component: LamettView,
+						},
+						{
+							path: 'waferlock',
+							name: 'waferlock',
+							component: WaferlockView,
 						},
 						{
 							path: 'electriccar',
