@@ -118,13 +118,13 @@ function hoverRoom(index: number) {
             <div v-if="isFloor == true && hasBg == true" class="w-4/5 relative">
                 <!-- 標準層平面圖背景 -->
                 <FloorPlanBackground class="w-full absolute inset-0" :current-hover-index="currentHoverType" style="padding-right: 5px;"></FloorPlanBackground>
-                <img :src="imageUrl" alt="Image" class="object-cover relative z-10" style="transform: scale(1.023); translate: 12px -8px;"/>
+                <img :src="imageUrl" alt="Image" class="object-cover relative z-10" style="scale: 0.99; translate: -1px -1px;"/>
             </div>
             <div v-else-if="isFloor == false && isAera == true" class="w-full h-full flex justify-start items-center" style="padding-left: 8rem;">
                 <!-- 標準層的每一個獨立房型 -->
                 <img :src="imageUrl" alt="Image" class="object-cover" style="width: 75%;" />
             </div>
-            <div v-else-if="isFloor == true && isBasement == true" class="w-4/6 flex justify-center items-center">
+            <div v-else-if="isFloor == true && isBasement == true" class="w-5/6 flex justify-center items-center">
                 <!-- 地下室 -->
                 <img :src="imageUrl" alt="Image" class="object-cover mt-24" />
             </div>
@@ -287,45 +287,45 @@ function hoverRoom(index: number) {
 
 
 .a-part {
-    width: 15%;
-    height: 40%;
-    top: 32%;
-    left: 10%;
+    width: 12.5%;
+    height: 31.5%;
+    top: 33%;
+    left: 15.8%;
 }
 
 .b-part {
-    width: 19%;
-    height: 19%;
-    top: 29%;
-    left: 25%;
+    width: 16.7%;
+    height: 15.8%;
+    top: 28.5%;
+    left: 28.2%;
 }
 
 .c-part {
-    width: 19.5%;
-    height: 18%;
-    top: 30%;
-    left: 51.8%;
+    width: 16.7%;
+    height: 15.8%;
+    top: 28.5%;
+    left: 51.4%;
 }
 
 .d-part {
-    width: 19.5%;
-    height: 28%;
-    top: 44%;
-    left: 70.8%;
+    width: 15.5%;
+    height: 20%;
+    top: 44.1%;
+    left: 66.6%;
 }
 
 .e-part {
-    width: 25.9%;
-    height: 19%;
-    top: 53%;
-    left: 44%;
+    width: 14.7%;
+    height: 15.1%;
+    top: 49.2%;
+    left: 51.8%;
 }
 
 .f-part {
-    width: 19%;
-    height: 19%;
-    top: 53%;
-    left: 25%;
+    width: 16.6%;
+    height: 15.1%;
+    top: 49.2%;
+    left: 28.2%;
 }
 
 </style>

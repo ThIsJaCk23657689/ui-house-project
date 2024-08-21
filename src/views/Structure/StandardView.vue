@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import FloorPlanWrapper from '@/layouts/FloorPlanWrapper.vue';
-const mainImage = new URL('@/assets/images/floorplans/standard_foreground.png', import.meta.url).href;
+const mainImage = new URL('@/assets/images/floorplans/standard_foreground.svg', import.meta.url).href;
 </script>
 
 <template>
