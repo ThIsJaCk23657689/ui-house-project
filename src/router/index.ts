@@ -35,6 +35,11 @@ import WaferlockView from '@/views/Material/WaferlockView.vue'
 import ElectricCarView from '@/views/Material/ElectricCarView.vue'
 import SecomView from '@/views/Material/SecomView.vue'
 
+// About 業績實景
+import ConceptView from '@/views/About/ConceptView.vue'
+import TeamsView from '@/views/About/Teams/TeamsView.vue'
+import CasesView from '@/views/About/Cases/CasesView.vue'
+
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes: [
@@ -186,6 +191,14 @@ const router = createRouter({
 					path: 'about',
 					name: 'about',
 					component: AboutView,
+					redirect: { name: 'concept' },
+					children: [
+						{
+							path: 'concept',
+							name: 'concept',
+							component: ConceptView,
+						}
+					]
 				}
 			]
 		}
