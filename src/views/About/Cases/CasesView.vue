@@ -46,86 +46,97 @@ const MenuItems = [
 </script>
 
 <template>
-<div class="w-full h-full relative flex flex-col pl-40 pr-24">
+<div class="w-full h-full relative flex flex-row justify-between">
 
-    <div class="absolute w-3 bottom-36 left-0">
-        <img src="@/assets/images/cases/design_bar.png" alt="" class="w-full">
-    </div>
+    <div class="h-full flex flex-col justify-center items-center pl-40 pr-24">
 
-    <div class="w-full h-3/5 flex flex-row items-center">
-        <template v-for="(object, index) in MenuItems[0]" :key="index">
+        <div class="w-full flex flex-row justify-center mb-16">
 
-            <div v-if="object.link.name === ''" class="relative card mr-16">
-                <div class="w-full h-full overflow-hidden">
+            <template v-for="(object, index) in MenuItems[0]" :key="index">
+                <div v-if="object.link.name === ''" class="relative card mr-16">
+                    <div class="w-full h-full overflow-hidden">
 
-                    <Transition name="scale2" appear>
-                        <img :src="object.url" alt="" class="object-cover caseImage2">
-                    </Transition>
-                    
-                    <div class="w-full absolute bottom-0 mb-4">
-                        <span class="text-zinc-50 text-xl border-x-2 px-4 font-bold">{{ object.name }}</span>
+                        <Transition name="scale2" appear>
+                            <img :src="object.url" alt="" class="object-cover caseImage2">
+                        </Transition>
+                        
+                        <div class="w-full absolute bottom-0 mb-4">
+                            <span class="text-zinc-50 text-xl border-x-2 px-4 font-bold">{{ object.name }}</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <RouteButton v-else :to="object.link" class="relative card mr-16">
-                <div class="w-full h-full overflow-hidden">
+                <RouteButton v-else :to="object.link" class="relative card mr-10">
+                    <div class="w-full h-full overflow-hidden">
 
-                    <Transition name="scale2" appear>
-                        <img :src="object.url" alt="" class="object-cover caseImage2">
-                    </Transition>
-                    
-                    <div class="w-full absolute bottom-0 mb-4">
-                        <span class="text-zinc-50 text-xl border-x-2 px-4 font-bold">{{ object.name }}</span>
+                        <Transition name="scale2" appear>
+                            <img :src="object.url" alt="" class="object-cover caseImage2">
+                        </Transition>
+                        
+                        <div class="w-full absolute bottom-0 mb-4">
+                            <span class="text-zinc-50 text-xl border-x-2 px-4 font-bold">{{ object.name }}</span>
+                        </div>
+                    </div>
+                </RouteButton>
+            </template>
+
+        </div>
+
+        <div class="w-full flex flex-row justify-between items-start">
+
+            <template v-for="(object, index) in MenuItems[1]" :key="index">
+                <div v-if="object.link.name === ''" class="relative card2 flex flex-col justify-center items-center">
+                    <div class="w-full h-full overflow-hidden">
+
+                        <Transition name="scale" appear>
+                            <img :src="object.url" alt="" class="object-cover caseImage">
+                        </Transition>
+
+                    </div>
+                    <div class="mt-4">
+                        <span class="text-primary-300 text-xl border-primary-300 border-x-2 px-4 font-bold">{{ object.name }}</span>
                     </div>
                 </div>
-            </RouteButton>
 
-        </template>
+                <RouteButton v-else :to="object.link" class="relative card2 flex flex-col justify-center items-center">
+                    <div class="w-full h-full overflow-hidden">
+
+                        <Transition name="scale" appear>
+                            <img :src="object.url" alt="" class="object-cover caseImage">
+                        </Transition>
+
+                    </div>
+                    <div class="mt-4">
+                        <span class="text-primary-300 text-xl border-primary-300 border-x-2 px-4 font-bold">{{ object.name }}</span>
+                    </div>
+                </RouteButton>
+            </template>
+
+        </div>
+
     </div>
 
-    <div class="w-full h-2/5 flex flex-row justify-between items-start">
-        <template v-for="(object, index) in MenuItems[1]" :key="index">
-            
-            <div v-if="object.link.name === ''" class="relative card2 flex flex-col justify-center items-center">
-                <div class="w-full h-full overflow-hidden">
-
-                    <Transition name="scale" appear>
-                        <img :src="object.url" alt="" class="object-cover caseImage">
-                    </Transition>
-
-                </div>
-                <div class="mt-4">
-                    <span class="text-zinc-50 text-xl border-x-2 px-4 font-bold">{{ object.name }}</span>
-                </div>
+    <!-- 右側 banner -->
+    <div class="h-full flex justify-end items-center">
+        <div class="h-full flex flex-col justify-end items-center relative">
+            <div class="absolute top-48 left-0 flex flex-col items-start w-1/2 ml-4">
+                <span class="text-xl text-primary-300 vertical-text english-font mb-6">Unique</span>
+                <span class="text-xl text-zinc-100 vertical-text">業　績</span>
             </div>
-
-            <RouteButton v-else :to="object.link" class="relative card2 flex flex-col justify-center items-center">
-                <div class="w-full h-full overflow-hidden">
-
-                    <Transition name="scale" appear>
-                        <img :src="object.url" alt="" class="object-cover caseImage">
-                    </Transition>
-
-                </div>
-                <div class="mt-4">
-                    <span class="text-zinc-50 text-xl border-x-2 px-4 font-bold">{{ object.name }}</span>
-                </div>
-            </RouteButton>
-
-        </template>
+            <img src="@/assets/images/right_banner_2.png" alt="" class="h-full object-cover" style="max-width: max-content;">
+        </div>
     </div>
-    
+
 </div> 
 </template>
 
 <style scoped>
 .card {
-    width: 21.5%;
+    width: 24.5%;
 }
 
 .card2 {
-    width: 18.98125%;
+    width: 20%;
 }
 
 .caseImage {

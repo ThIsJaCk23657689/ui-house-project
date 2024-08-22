@@ -38,7 +38,7 @@ const menuItems = ref([
         chineseText: '業績', 
         subItems: [
             { name:'concept', path: '/about/concept', text: '理念' },
-            { name:'cases', path: '#',  text: '業績' },
+            { name:'cases', path: '/about/cases',  text: '業績' },
             { name:'teams', path: '#', text: '團隊' },
         ]    
     },

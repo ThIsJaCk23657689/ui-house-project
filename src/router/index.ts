@@ -39,6 +39,13 @@ import SecomView from '@/views/Material/SecomView.vue'
 import ConceptView from '@/views/About/ConceptView.vue'
 import TeamsView from '@/views/About/Teams/TeamsView.vue'
 import CasesView from '@/views/About/Cases/CasesView.vue'
+import Case01View from '@/views/About/Cases/Case01View.vue'
+import Case02View from '@/views/About/Cases/Case02View.vue'
+import Case03View from '@/views/About/Cases/Case03View.vue'
+import Case04View from '@/views/About/Cases/Case04View.vue'
+import Case05View from '@/views/About/Cases/Case05View.vue'
+import Case06View from '@/views/About/Cases/Case06View.vue'
+import Case07View from '@/views/About/Cases/Case07View.vue'
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -197,7 +204,54 @@ const router = createRouter({
 							path: 'concept',
 							name: 'concept',
 							component: ConceptView,
-						}
+						},
+						{
+							path: 'cases',
+							name: 'cases',
+							redirect: { name: 'cases-menu' },
+							children: [
+								{
+									path: 'menu',
+									name: 'cases-menu',
+									component: CasesView,
+								},
+								// {
+								// 	path: 'case01',
+								// 	name: 'cases-case01',
+								// 	component: Case01View,
+								// },
+								// {
+								// 	path: 'case02',
+								// 	name: 'cases-case02',
+								// 	component: Case02View,
+								// },
+								{
+									path: 'shome',
+									name: 'cases-shome',
+									component: Case03View,
+								},
+								{
+									path: 'good',
+									name: 'cases-good',
+									component: Case04View,
+								},
+								{
+									path: 'nine',
+									name: 'cases-nine',
+									component: Case05View,
+								},
+								{
+									path: 'mountain',
+									name: 'cases-mountain',
+									component: Case06View,
+								},
+								{
+									path: 'liveown',
+									name: 'cases-liveown',
+									component: Case07View,
+								},
+							]
+						},
 					]
 				}
 			]

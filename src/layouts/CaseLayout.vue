@@ -1,32 +1,59 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/vue/24/solid';
+import ArrowReturnIcon from '../components/icons/ArrowReturnIcon.vue';
 import RouteButton from '@/components/RouteButton.vue';
 
+interface UrlObject {
+    name: string;
+}
+
 const props = defineProps<{
-    imageUrls: Array<string>,
-    slogan: string,
-    mainTitle: string,
-}>()
-
-const currentPageIndex = ref(0);
-
-function nextImage() {
-    let currentImageLength = props.imageUrls.length;
-    currentPageIndex.value = (currentPageIndex.value + 1) % currentImageLength;
-}
-
-function prevImage() {
-    let currentImageLength = props.imageUrls.length;
-    currentPageIndex.value = (currentPageIndex.value - 1 + currentImageLength) % currentImageLength;
-}
-
+    prevUrl: UrlObject;
+    nextUrl: UrlObject;
+    returnUrl: UrlObject;
+}>();
 
 </script>
 
 <template>
 <div class="w-full h-full relative">
-    <template v-if="props.imageUrls.length > 1">
+
+    <div class="h-full flex flex-row justify-between">
+        <!-- 內容 -->
+        <slot></slot>
+
+        <!-- 右側 banner -->
+        <div class="h-full flex justify-end items-center">
+            <div class="h-full flex flex-col justify-end items-center relative">
+                <div class="absolute top-48 left-0 flex flex-col items-start w-1/2 ml-4">
+                    <span class="text-xl text-primary-300 vertical-text english-font mb-6">Unique</span>
+                    <span class="text-xl text-zinc-100 vertical-text">業　績</span>
+                </div>
+                <img src="@/assets/images/right_banner_2.png" alt="" class="h-full object-cover" style="max-width: max-content;">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 按鈕 -->
+    <div class="absolute right-48 bottom-12 flex flex-row justify-center items-center z-90">
+        <RouteButton :to="props.prevUrl" class="w-9 h-9 flex justify-center items-center transition-300-out mr-2 relative">
+            <img src="@/assets/images/button_1.png" alt="object-cover">
+            <ChevronLeftIcon class="h-6 w-6 text-white absolute mr-1" />
+        </RouteButton>
+        <RouteButton :to="props.nextUrl" class="w-9 h-9 flex justify-center items-center transition-300-out mr-2 relative">
+            <img src="@/assets/images/button_2.png" alt="object-cover">
+            <ChevronRightIcon class="h-6 w-6 text-white absolute ml-1" />
+        </RouteButton>
+        <RouteButton :to="props.returnUrl" class="w-9 h-9 flex justify-center items-center transition-300-out relative">
+            <img src="@/assets/images/button_3.png" alt="object-cover">
+            <ArrowReturnIcon class="h-4 w-4 text-white absolute"/>
+        </RouteButton>
+    </div>
+
+
+    <!-- <template v-if="props.imageUrls.length > 1">
         <button class="w-8 border border-white rounded-full p-1 bg-black/50 text-white prev-button hover:bg-primary-100 hover:border-primary-100 transition-300-out z-20" @click="prevImage">
             <ChevronLeftIcon></ChevronLeftIcon>
         </button>
@@ -35,10 +62,6 @@ function prevImage() {
             <ChevronRightIcon></ChevronRightIcon>
         </button>
     </template>
-
-    <div class="absolute w-3 bottom-36">
-        <img src="@/assets/images/cases/design_bar.png" alt="" class="w-full">
-    </div>
 
     <div class="card h-full flex flex-row">
         <div class="bg-primary-200 w-1/3 h-full flex flex-col justify-around items-center">
@@ -78,37 +101,13 @@ function prevImage() {
                 <img :src="imageUrls[currentPageIndex]" alt="" class="object-cover h-full mainImage">
             </Transition>
         </div>
-    </div>
+
+    </div> -->
 </div>
 </template>
 
 <style scoped>
-.prev-button {
-    position: absolute;
-    top: 50%;
-    left: 3%;
-}
 
-.next-button {
-    position: absolute;
-    top: 50%;
-    right: 3%;
-}
-
-.center-justified {
-    text-align: justify;
-    -moz-text-align-last: center;
-    text-align-last: center;
-}
-
-.mainImage {
-    transform: scale(1.02);
-    transition: all 2.0s ease-out;
-}
-
-.mainImage:hover {
-    transform: scale(1.0);
-}
 
 /* ========================== */
 .fade-enter-active, .fade-leave-active {
@@ -129,18 +128,6 @@ function prevImage() {
 .slide-fade-down-leave-to {
 	transform: translateY(-50px);
 	opacity: 0;
-}
-
-
-/* ========================== */
-.scale-enter-to, .scale-leave-from {
-    transform: scale(1.02);
-}
-.scale-enter-active, .scale-leave-active {
-    transition: all 2.0s ease-out;
-}
-.scale-enter-from, .scale-leave-to {
-    transform: scale(1.0);
 }
 
 </style>

@@ -240,6 +240,17 @@ body {
 	opacity: 0;
 }
 
+/* ========== 放大至縮小 ========== */
+.scale-enter-to, .scale-leave-from {
+    transform: scale(1.02);
+}
+.scale-enter-active, .scale-leave-active {
+    transition: all 2.0s ease-out;
+}
+.scale-enter-from, .scale-leave-to {
+    transform: scale(1.0);
+}
+
 /* ========== 圖片淡入淡出 ========== */
 .image-fade-enter-active,
 .image-fade-leave-active {
