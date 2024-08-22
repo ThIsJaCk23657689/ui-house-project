@@ -7,14 +7,14 @@ import Page04View from './Svago/Page04.vue'
 
 const pages = [
     { content: Page01View, isDark: true },
-    { content: Page02View, isDark: false },
+    { content: Page02View, isDark: true },
     { content: Page03View, isDark: true },
     { content: Page04View, isDark: true },
 ];
 
 const buttons = [
     {
-        text: "A/B/C/D 戶",
+        text: "A/B/C/D/F 戶",
         start: 0,
         end: 1
     },

@@ -40,7 +40,7 @@ const buttons = [
         end: 9
     },
     {
-        text: "樣品屋",
+        text: "樣品示意",
         start: 10,
         end: 10
     }

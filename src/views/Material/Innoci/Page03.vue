@@ -3,7 +3,7 @@
 
 <template>
 <div class="w-full h-full carousel-slide">
-    <img src="@/assets/images/materials/innoci/03.jpg" class="object-cover w-full h-full">
+    <img src="@/assets/images/materials/innoci/03.png" class="object-cover w-full h-full">
 </div>
 </template>
 

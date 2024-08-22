@@ -33,6 +33,7 @@ import DaikenView from '@/views/Material/DaikenView.vue'
 import LamettView from '@/views/Material/LamettView.vue'
 import WaferlockView from '@/views/Material/WaferlockView.vue'
 import ElectricCarView from '@/views/Material/ElectricCarView.vue'
+import SecomView from '@/views/Material/SecomView.vue'
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -173,6 +174,11 @@ const router = createRouter({
 							path: 'electriccar',
 							name: 'electriccar',
 							component: ElectricCarView,
+						},
+						{
+							path: 'secom',
+							name: 'secom',
+							component: SecomView,
 						}
 					]
 				},

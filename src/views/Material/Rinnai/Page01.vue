@@ -4,15 +4,7 @@
 
 <template>
 <div class="w-full h-full carousel-slide">
-    <img src="@/assets/images/materials/Rinnai/01.jpg" class="object-cover h-full">
-    <div class="card text-white top">
-        隱藏式強化玻璃 <br/>
-        導煙設計排油煙機
-    </div>
-    <div class="card text-white bottom">
-        黑色玻璃檯面式 <br/>
-        防漏二口瓦斯爐
-    </div>
+    <img src="@/assets/images/materials/Rinnai/01.png" class="object-cover w-full h-full">
 </div>
 </template>
 

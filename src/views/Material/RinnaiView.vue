@@ -12,11 +12,6 @@ const buttons = [
         start: 0,
         end: 0
     },
-    {
-        text: "樣品屋",
-        start: 1,
-        end: 1
-    }
 ];
 </script>
 

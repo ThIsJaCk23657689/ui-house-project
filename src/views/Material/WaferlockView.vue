@@ -5,7 +5,7 @@ import Page02View from './Waferlock/Page02.vue'
 
 const pages = [
     { content: Page01View, isDark: true  },
-    { content: Page02View, isDark: true  }
+    //{ content: Page02View, isDark: true  }
 ];
 
 const buttons = [
@@ -14,11 +14,6 @@ const buttons = [
         start: 0,
         end: 0
     },
-    {
-        text: "樣品屋",
-        start: 1,
-        end: 1
-    }
 ];
 </script>
 

@@ -17,7 +17,7 @@ const buttons = [
         end: 1
     },
     {
-        text: "樣品屋",
+        text: "樣品示意",
         start: 2,
         end: 2
     }

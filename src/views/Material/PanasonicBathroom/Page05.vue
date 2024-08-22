@@ -4,7 +4,7 @@
 
 <template>
 <div class="w-full h-full carousel-slide">
-    <img src="@/assets/images/materials/PanasonicBathroom/05.jpg" class="object-cover w-full h-full">
+    <img src="@/assets/images/materials/PanasonicBathroom/05.png" class="object-cover w-full h-full">
 </div>
 </template>
 

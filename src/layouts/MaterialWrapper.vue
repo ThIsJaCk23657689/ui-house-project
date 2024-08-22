@@ -33,6 +33,7 @@ const materials = [
     { path: 'lamett', image: new URL('@/assets/images/materials/side/Lamett.png', import.meta.url).href },
     { path: 'waferlock', image: new URL('@/assets/images/materials/side/Waferlock.png', import.meta.url).href },
     { path: 'electriccar', image: new URL('@/assets/images/materials/side/ElectronCar.png', import.meta.url).href },
+    { path: 'secom', image: new URL('@/assets/images/materials/side/Secom.png', import.meta.url).href },
 ];
 
 // 決定Side Menu單是否要 active

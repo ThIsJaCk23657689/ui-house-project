@@ -17,7 +17,7 @@ const pages = [
     { content: Page03View, isDark: true  },
     { content: Page04View, isDark: true  },
     { content: Page05View, isDark: true  },
-    { content: Page06View, isDark: false },
+    { content: Page06View, isDark: true  },
     { content: Page07View, isDark: true  },
     { content: Page08View, isDark: true  },
     { content: Page09View, isDark: true  },
@@ -27,8 +27,8 @@ const pages = [
 const buttons = [
     {
         text: "電動車",
-        start: 11,
-        end: 11
+        start: 0,
+        end: 9
     }
 ];
 </script>

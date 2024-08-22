@@ -13,6 +13,7 @@ const materials = [
     { path: 'lamett', image: new URL('@/assets/images/materials/logos/Lamett.svg', import.meta.url).href },
     { path: 'waferlock', image: new URL('@/assets/images/materials/logos/Waferlock.svg', import.meta.url).href },
     { path: 'electriccar', image: new URL('@/assets/images/materials/logos/ElectronCar.svg', import.meta.url).href },
+    { path: 'secom', image: new URL('@/assets/images/materials/logos/Secom.svg', import.meta.url).href },
 ];
 
 </script>
