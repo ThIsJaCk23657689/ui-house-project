@@ -3,73 +3,100 @@
 </script>
 
 <template>
-<div class="w-full h-full relative flex flex-row">
+<div class="w-full h-full flex flex-row justify-between">
+    <div class="h-full pl-24">
 
-    <div class="w-3/4 h-full bg-primary-200 flex flex-col justify-center items-start left-container relative">
-        
-        <Transition name="slide-fade-right" appear>
-            <div class="logo-container mb-8">
-                <!-- <img src="@/assets/images/index_left_bottom_logo.png" alt="" class="object-cover h-full"> -->
-            </div>
-        </Transition>
+        <!-- 標題 -->
+        <div class="mt-[23rem] mb-16">
+            <Transition name="slide-fade-right" appear>
+                <div class="text-7xl flex items-end">
+                    <span class="font-bold inline-block">職人</span>
+                    <span class="inline-block">態度&nbsp;╳&nbsp;</span>
+                    <span class="font-bold inline-block">風格</span>
+                    <span class="inline-block">專屬</span>
+                </div>
+            </Transition>
+            <Transition name="slide-fade-right" appear>
+                <h3 class="font-bold mt-6 text-6xl sub-title">美的<span class="font-normal">IN</span> 同興協記</h3>
+            </Transition>
+        </div>
 
+        <!-- 文字 -->
         <Transition name="slide-fade-in" appear>
-            <div class="text-zinc-50 text-2xl font-bold tracking-widest mb-8">
-                我們用 PMG 務實、時尚、自然，成就關於美的一切
+            <div class="bg-gradient-to-r from-gray-300 to-white rounded-lg text-primary-300 font-bold text-2xl py-2 px-4 flex items-center justify-start tracking-widest mb-8">
+                我們用 <span class="tracking-normal">PMG</span>：務實、時尚、自然，成就關於美的一切
             </div>
         </Transition>
 
         <Transition name="slide-fade-in2" appear>
-            <div class="flex flex-row justify-center items-center text-zinc-50 text-xl">
-                <div class="flex flex-col justify-center items-start mr-4">
-                    <div class="mb-3 font-normal">Pragmatic</div>
-                    <div class="mb-3 font-normal">Modern</div>
-                    <div class="mb-3 font-normal">Green</div>
-                </div>
-                <div class="flex flex-col justify-center items-start">
-                    <div class="mb-3 font-bold">頂真精神，誠信負責、把事情做到最好</div>
-                    <div class="mb-3 font-bold">建築觀點因時因地制宜，反映當代生活風格</div>
-                    <div class="mb-3 font-bold">以緣相映的哲學，自然而然與環境共生</div>
-                </div>
-            </div>
-        </Transition>
-
-        <Transition name="slide-fade-up" appear>
-            <div class="absolute bottom-16 right-8 text-4xl font-bold text-zinc-50 vertiacl-text">
-                職人態度
-            </div>
-        </Transition>
-
-    </div>
-
-    <div class="w-1/4 h-full bg-primary-400 relative">
-
-        <Transition name="slide-fade-down" appear>
-            <div class="absolute bottom-16 left-8 text-4xl font-bold text-zinc-600 vertiacl-text">
-                風格專屬
-            </div>
+            <ul class="pl-6 text-xl text-primary-300">
+                <li class="mb-3">
+                    <div class="flex flex-row items-center justify-start">
+                        <div class="english-col">Pragmatic</div>
+                        <div class="font-bold">頂真精神，誠信負責、把事情做到最好</div>
+                    </div>
+                </li>
+                <li class="mb-3">
+                    <div class="flex flex-row items-center justify-start">
+                        <div class="english-col">Modern</div>
+                        <div class="font-bold">建築觀點因時因地制宜，反映當代生活風格</div>
+                    </div>
+                </li>
+                <li class="mb-3">
+                    <div class="flex flex-row items-center justify-start">
+                        <div class="english-col">Green</div>
+                        <div class="font-bold">以緣相映的哲學，自然而然與環境共生</div>
+                    </div>
+                </li>
+            </ul>
         </Transition>
 
     </div>
 
+    <!-- 右側 banner -->
+    <div class="h-full flex justify-end items-center bg-primary-100">
+        <div class="h-full flex flex-col justify-end items-center relative">
+            <div class="absolute top-48 right-4 flex flex-col items-start ml-4 z-10">
+                <span class="text-xl text-primary-300 vertical-text english-font mb-6">Unique</span>
+                <span class="text-xl text-zinc-100 vertical-text">理　念</span>
+            </div>
+            <img src="@/assets/images/right_banner_4.png" alt="" class="h-full object-cover" style="max-width: max-content;">
+        </div>
+        <div class="h-full flex flex-col justify-end items-center relative">
+            <img src="@/assets/images/right_banner_3.png" alt="" class="h-full object-cover" style="max-width: max-content;">
+        </div>
+    </div>
 </div>
 </template>
 
 <style scoped>
-.logo-container {
-    height: 25%;
+.sub-title {
+    color: #4d4d4d;
 }
 
-.left-container {
-    padding-top: 14%;
-    padding-left: 7%;
+.english-col {
+    width: 18%
 }
 
-.vertiacl-text {
-    writing-mode: vertical-lr;
-    letter-spacing: 2.0em;
+
+
+
+
+
+
+.slide-fade-right-enter-active {
+	transition: all 2.0s ease-out;
 }
 
+.slide-fade-right-leave-active {
+	transition: all 2.0s ease-out;
+}
+
+.slide-fade-right-enter-from,
+.slide-fade-right-leave-to {
+	transform: translateX(-80px);
+	opacity: 0;
+}
 
 
 .slide-fade-in-enter-active {
@@ -98,5 +125,6 @@
 .slide-fade-in2-leave-to {
 	opacity: 0;
 }
+
 
 </style>
