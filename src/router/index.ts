@@ -35,9 +35,10 @@ import WaferlockView from '@/views/Material/WaferlockView.vue'
 import ElectricCarView from '@/views/Material/ElectricCarView.vue'
 import SecomView from '@/views/Material/SecomView.vue'
 
-// About 業績實景
+// 理念
 import ConceptView from '@/views/About/ConceptView.vue'
-import TeamsView from '@/views/About/Teams/TeamsView.vue'
+
+// 業績
 import CasesView from '@/views/About/Cases/CasesView.vue'
 import Case01View from '@/views/About/Cases/Case01View.vue'
 import Case02View from '@/views/About/Cases/Case02View.vue'
@@ -46,6 +47,12 @@ import Case04View from '@/views/About/Cases/Case04View.vue'
 import Case05View from '@/views/About/Cases/Case05View.vue'
 import Case06View from '@/views/About/Cases/Case06View.vue'
 import Case07View from '@/views/About/Cases/Case07View.vue'
+
+// 團隊
+import TeamsView from '@/views/About/Teams/TeamsView.vue'
+import ChangView from '@/views/About/Teams/ChangView.vue'
+import ChenView from '@/views/About/Teams/ChenView.vue'
+
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -252,6 +259,28 @@ const router = createRouter({
 								},
 							]
 						},
+						{
+							path: 'teams',
+							name: 'teams',
+							redirect: { name: 'teams-menu' },
+							children: [
+								{
+									path: 'menu',
+									name: 'teams-menu',
+									component: TeamsView,
+								},
+								{
+									path: 'chen',
+									name: 'teams-chen',
+									component: ChenView,
+								},
+								{
+									path: 'chang',
+									name: 'teams-chang',
+									component: ChangView,
+								},
+							]
+						}
 					]
 				}
 			]

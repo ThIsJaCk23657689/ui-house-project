@@ -39,7 +39,7 @@ const menuItems = ref([
         subItems: [
             { name:'concept', path: '/about/concept', text: '理念' },
             { name:'cases', path: '/about/cases',  text: '業績' },
-            { name:'teams', path: '#', text: '團隊' },
+            { name:'teams', path: '/about/teams', text: '團隊' },
         ]    
     },
 ]);
