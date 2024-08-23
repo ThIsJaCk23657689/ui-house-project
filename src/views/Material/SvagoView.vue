@@ -20,12 +20,12 @@ const buttons = [
     {
         text: "A/B/C/D/F 戶",
         start: 0,
-        end: 1
+        end: 2
     },
     {
         text: "E 戶",
-        start: 2,
-        end: 3
+        start: 3,
+        end: 5
     },
 ];
 </script>
