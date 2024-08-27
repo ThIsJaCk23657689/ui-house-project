@@ -9,7 +9,7 @@
         <!-- 標題 -->
         <div class="mt-[23rem] mb-16">
             <Transition name="slide-fade-right" appear>
-                <div class="text-7xl flex items-end">
+                <div class="text-6xl 3xl:text-7xl flex items-end">
                     <span class="font-bold inline-block">職人</span>
                     <span class="inline-block">態度&nbsp;╳&nbsp;</span>
                     <span class="font-bold inline-block">風格</span>
@@ -23,7 +23,7 @@
 
         <!-- 文字 -->
         <Transition name="slide-fade-in" appear>
-            <div class="bg-gradient-to-r from-gray-300 to-white rounded-lg text-primary-300 font-bold text-2xl py-2 px-4 flex items-center justify-start tracking-widest mb-8">
+            <div class="bg-gradient-to-r from-gray-300 to-white rounded-lg text-primary-300 font-bold text-xl 3xl:text-2xl py-2 px-4 flex items-center justify-start tracking-widest mb-8">
                 我們用 <span class="tracking-normal">PMG</span>：務實、時尚、自然，成就關於美的一切
             </div>
         </Transition>

@@ -30,13 +30,13 @@ const people = [
             <!-- 人物介紹 1 -->
             <div class="w-4/5 h-full flex justify-end pr-2">
                 <Transition :name="people[0].transition" appear>
-                    <RouteButton :to="people[0].router" class="flex flex-col w-4/5 mt-56 relative">
+                    <RouteButton :to="people[0].router" class="flex flex-col w-4/5 mt-48 3xl:mt-56 relative">
                         <div class="w-full overflow-hidden mb-4 relative">
                             <img :src="people[0].avatar" class="object-cover w-full h-full mainImage" alt="">
                             <span class="absolute top-10 right-6 vertical-text text-3xl text-zinc-50 font-bold tracking-[.5rem] mr-2 z-10">{{ people[0].title }}</span>
                         </div>
 
-                        <div class="absolute top-[27.4rem] left-[12rem] w-full flex flex-col z-50">
+                        <div class="absolute top-[21.5rem] 3xl:top-[27.4rem] left-[12rem] w-full flex flex-col z-50">
                             <div class="w-full mb-2">
                                 <img src="@/assets/images/teams/banner.png" alt="" class="object-fit" style="height: 2.4rem;">
                             </div>
@@ -56,7 +56,7 @@ const people = [
             <!-- 人物介紹 2 -->
             <div class="w-4/5 h-full flex justify-start items-end pl-2">
                 <Transition :name="people[1].transition" appear>
-                    <RouteButton :to="people[1].router" class="flex flex-row w-4/5 mb-56">
+                    <RouteButton :to="people[1].router" class="flex flex-row w-4/5 mb-40 3xl:mb-56">
                         <div class="h-full flex flex-col relative">
                             <div class="w-full overflow-hidden mb-2">
                                 <img :src="people[1].avatar" class="object-cover w-full h-full mainImage" alt="">

@@ -5,6 +5,9 @@ export default {
 		"./src/**/*.{vue,js,ts,jsx,tsx}",
 	],
 	theme: {
+		screens: {
+			'3xl': '1600px'
+		},
 		extend: {
 			colors: {
 				'primary': {
