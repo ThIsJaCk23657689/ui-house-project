@@ -7,7 +7,6 @@ import Page04View from './PanasonicKitchen/Page04.vue'
 import Page05View from './PanasonicKitchen/Page05.vue'
 import Page06View from './PanasonicKitchen/Page06.vue'
 import Page07View from './PanasonicKitchen/Page07.vue'
-import Page08View from './PanasonicKitchen/Page08.vue'
 
 const pages = [
     { content: Page01View, isDark: true  },
@@ -17,7 +16,6 @@ const pages = [
     { content: Page05View, isDark: true  },
     { content: Page06View, isDark: true  },
     { content: Page07View, isDark: true  },
-    { content: Page08View, isDark: true  }
 ];
 
 const buttons = [

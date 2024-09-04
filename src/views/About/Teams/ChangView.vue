@@ -33,9 +33,9 @@ const person = {
     ],
     awardsGrid: [],
     workImages: [
-        { url: new URL('@/assets/images/teams/02-01.png', import.meta.url).href },
-        { url: new URL('@/assets/images/teams/02-02.png', import.meta.url).href },
-        { url: new URL('@/assets/images/teams/02-03.png', import.meta.url).href }
+        // { url: new URL('@/assets/images/teams/02-01.png', import.meta.url).href },
+        // { url: new URL('@/assets/images/teams/02-02.png', import.meta.url).href },
+        // { url: new URL('@/assets/images/teams/02-03.png', import.meta.url).href }
     ]
 };
 
@@ -63,7 +63,9 @@ const prev = () => {
 <template>
 <div class="w-full h-full flex flex-row relative">
     <div class="w-full h-full">
-        <img :src="images[currentIndex].url" alt="" class="w-full h-full object-cover">
+        <Transition name="slide" mode="out-in">
+            <img :key="currentIndex" :src="images[currentIndex].url" alt="" class="w-full h-full object-cover">
+        </Transition>
     </div>
 
     <!-- 按鈕 -->
@@ -101,4 +103,11 @@ const prev = () => {
 </template>
 
 <style scoped>
+.slide-enter-active, .slide-leave-active {
+    transition: opacity 0.8s ease-out;
+}
+.slide-enter, .slide-leave-to {
+    opacity: 0;
+}
+
 </style>
