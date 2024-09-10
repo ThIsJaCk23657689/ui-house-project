@@ -34,7 +34,7 @@ function prevImage() {
 
 	</div>
 		
-	<div class="w-full h-1/6 flex flex-row bg-gradient-to-r from-[#37a9a5] to-[#f5ff00]">
+	<div class="w-full h-1/6 flex flex-row bg-gradient-to-r from-primary-600 to-primary-500">
 		<div class="w-1/2 h-full flex flex-row justify-start items-center pl-24">
 			<span class="english-font text-3xl text-zinc-100 mr-6">ARCH</span>
 			<div class="w-1/2 h-px bg-zinc-200"></div>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import IconMagnifyingGlassPlus from '@/components/icons/IconMagnifyingGlassPlus.vue';
 import IconMagnifyingGlassMinus from '@/components/icons/IconMagnifyingGlassMinus.vue';
 import IconSun from '@/components/icons/IconSun.vue';
@@ -7,12 +7,25 @@ import IconSunFill from '@/components/icons/IconSunFill.vue';
 import IconMoon from '@/components/icons/IconMoon.vue';
 import IconMoonFill from '@/components/icons/IconMoonFill.vue';
 
+interface Spot {
+    top: number;
+    left: number;
+    rotate: number;
+}
+
+interface ImageInfo {
+    url: string;
+    spot: Spot;
+}
+
+interface ImageUrls {
+    day: ImageInfo;
+    night: ImageInfo;
+}
+
 const props = defineProps<{
-	imageUrls: Array<{
-		day: string
-		night: string,
-	}>
-}>()
+	imageUrls: Array<ImageUrls>
+}>();
 
 const scale = ref(1);               // 初始縮放比例
 const dragging = ref(false);        // 是否正在拖動
@@ -93,6 +106,12 @@ function reset() {
     translateY.value = 0;
 }
 
+const spot = computed(() => {
+  return dayMode.value
+    ? props.imageUrls[currentIndex.value].day.spot
+    : props.imageUrls[currentIndex.value].night.spot;
+});
+
 </script>
 
 <template>
@@ -112,13 +131,24 @@ function reset() {
 
             <TransitionGroup name="image-fade">
                 <div v-if="dayMode" v-for="i in [currentIndex]" :key="i" class="w-full h-full">
-                    <img :key="currentIndex" :src="imageUrls[currentIndex].day" alt="Image" class="w-full h-full object-cover">
+                    <img :key="currentIndex" :src="imageUrls[currentIndex].day.url" alt="Image" class="w-full h-full object-cover">
                 </div>
 				<div v-else v-for="i in [currentIndex]" :key="i + 10" class="w-full h-full">
-                    <img :key="currentIndex" :src="imageUrls[currentIndex].night" alt="Image" class="w-full h-full object-cover">
+                    <img :key="currentIndex" :src="imageUrls[currentIndex].night.url" alt="Image" class="w-full h-full object-cover">
                 </div>
             </TransitionGroup>
             
+        </div>
+
+        <div class="absolute bottom-0 right-24 flex justify-center items-center w-1/5 h-1/4">
+            <div class="flex justify-center items-center relative w-full h-full">
+                <div class="absolute top-0 left-0">
+                    <img src="@/assets/images/apperance/minmap.png" alt="Minmap" class="object-cover"/>
+                </div>
+                <div class="absolute w-[1.5rem] transition ease-out delay-150 duration-300" :style="{ top: `${spot.top}%`, left: `${spot.left}%`, transform: `rotate(${spot.rotate}deg)` }">
+                    <img src="@/assets/images/apperance/spot.png" alt="current spot" class="object-cover drop-shadow-md"/>
+                </div>
+            </div>
         </div>
 
         <div class="control-panel">
@@ -142,13 +172,13 @@ function reset() {
                 </div>
             </div>
         </div>
-        
-        <div class="absolute inset-y-0 right-0 w-36 h-full flex flex-col justify-center items-center">
+
+        <div v-if="dayMode" class="absolute inset-y-0 right-0 w-36 h-full flex flex-col justify-center items-center">
             <div v-for="(imageUrl, index) in imageUrls" :key="index" class="group" @click="changeImageIndex(index)">
                 <div :class="[
                     'dot', 'cursor-pointer', 'mb-8',
-                    { 'group-hover:bg-primary-100 transition-300-out bg-zinc-400': currentIndex !== index },
-                    { 'bg-primary-300': currentIndex === index }
+                    { 'group-hover:bg-primary-600 transition-300-out bg-primary-500': currentIndex !== index },
+                    { 'bg-primary-500': currentIndex === index }
                 ]">
                 </div>
             </div>

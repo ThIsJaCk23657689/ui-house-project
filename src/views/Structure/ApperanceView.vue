@@ -3,17 +3,77 @@ import ImageScaleViewer from '@/components/ImageScaleViewer.vue';
 
 const buildingImages = [
     {
-        day: new URL('@/assets/images/apperance/day_1.jpg', import.meta.url).href,
-        night: new URL('@/assets/images/apperance/night_1.jpg', import.meta.url).href,
+        day: {
+            url: new URL('@/assets/images/apperance/day_1.jpg', import.meta.url).href,
+            spot: {
+                top: 10,
+                left: 6,
+                rotate: 130,
+            }
+        },
+        night: {
+            url: new URL('@/assets/images/apperance/night_1.jpg', import.meta.url).href,
+            spot: {
+                top: 10,
+                left: 6,
+                rotate: 130,
+            }
+        },
     },
     {
-        day: new URL('@/assets/images/apperance/day_2.jpg', import.meta.url).href,
-        night: new URL('@/assets/images/apperance/night_2.jpg', import.meta.url).href,
+        day: {
+            url: new URL('@/assets/images/apperance/day_2.jpg', import.meta.url).href,
+            spot: {
+                top: 2,
+                left: 44.2,
+                rotate: 180,
+            }
+        },
+        night: {
+            url: new URL('@/assets/images/apperance/night_1.jpg', import.meta.url).href,
+            spot: {
+                top: 10,
+                left: 6,
+                rotate: 130,
+            }
+        },
     },
     {
-        day: new URL('@/assets/images/apperance/day_3.jpg', import.meta.url).href,
-        night: new URL('@/assets/images/apperance/night_3.jpg', import.meta.url).href,
-    }
+        day: {
+            url: new URL('@/assets/images/apperance/day_3.jpg', import.meta.url).href,
+            spot: {
+                top: 49,
+                left: 37,
+                rotate: 0,
+            }
+        },
+        night: {
+            url: new URL('@/assets/images/apperance/night_1.jpg', import.meta.url).href,
+            spot: {
+                top: 10,
+                left: 6,
+                rotate: 130,
+            }
+        },
+    },
+    {
+        day: {
+            url: new URL('@/assets/images/apperance/day_4.jpg', import.meta.url).href,
+            spot: {
+                top: 27,
+                left: 0,
+                rotate: 90,
+            }
+        },
+        night: {
+            url: new URL('@/assets/images/apperance/night_1.jpg', import.meta.url).href,
+            spot: {
+                top: 10,
+                left: 6,
+                rotate: 130,
+            }
+        },
+    },
 ];
 </script>
 
