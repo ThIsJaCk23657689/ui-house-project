@@ -20,6 +20,12 @@ import StandardView from '@/views/Structure/StandardView.vue'
 import StandardIndividualView from '@/views/Structure/StandardIndividualView.vue'
 import BasementView from '@/views/Structure/BasementView.vue'
 
+// Facilities 公設
+import FacilitiesView from '@/layouts/FacilitiesLayout.vue'
+import Facilities01 from '@/views/Structure/Facilities/Facilities01.vue'
+import Facilities02 from '@/views/Structure/Facilities/Facilities02.vue'
+import Facilities03 from '@/views/Structure/Facilities/Facilities03.vue'
+
 // Material 選材
 import MaterialMenuView from '@/views/Material/MaterialMenuView.vue'
 import PanasonicKitchenView from '@/views/Material/PanasonicKitchenView.vue'
@@ -126,6 +132,29 @@ const router = createRouter({
 							name: 'basement',
 							component: BasementView,
 						},
+						{
+							path: 'facilities',
+							name: 'facilities',
+							component: FacilitiesView,
+							redirect: { name: 'facilities01' },
+							children: [
+								{
+									path: 'facilities01',
+									name: 'facilities01',
+									component: Facilities01,
+								},
+								{
+									path: 'facilities02',
+									name: 'facilities02',
+									component: Facilities02,
+								},
+								{
+									path: 'facilities03',
+									name: 'facilities03',
+									component: Facilities03,
+								},
+							]
+						}
 					]
 				},
 				{
