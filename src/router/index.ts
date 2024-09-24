@@ -251,16 +251,16 @@ const router = createRouter({
 									name: 'cases-menu',
 									component: CasesView,
 								},
-								// {
-								// 	path: 'case01',
-								// 	name: 'cases-case01',
-								// 	component: Case01View,
-								// },
-								// {
-								// 	path: 'case02',
-								// 	name: 'cases-case02',
-								// 	component: Case02View,
-								// },
+								{
+									path: 'sea',
+									name: 'cases-sea',
+									component: Case01View,
+								},
+								{
+									path: 'orange',
+									name: 'cases-orange',
+									component: Case02View,
+								},
 								{
 									path: 'shome',
 									name: 'cases-shome',

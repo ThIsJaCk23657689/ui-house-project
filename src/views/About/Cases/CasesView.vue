@@ -21,12 +21,12 @@ const MenuItems = [
     ],
     [
         { 
-            link: { name: '' },
+            link: { name: 'cases-sea' },
             url: new URL('@/assets/images/cases/sea.png', import.meta.url).href, 
             name: '海悅' 
         },
         { 
-            link: { name: '' },
+            link: { name: 'cases-orange' },
             url: new URL('@/assets/images/cases/orange.png', import.meta.url).href, 
             name: '澄品' 
         },
