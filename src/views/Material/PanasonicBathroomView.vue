@@ -7,11 +7,11 @@ import Page04View from './PanasonicBathroom/Page04.vue'
 import Page05View from './PanasonicBathroom/Page05.vue'
 
 const pages = [
-    { content: Page01View, isDark: true  },
-    { content: Page02View, isDark: false },
-    { content: Page03View, isDark: true  },
-    { content: Page04View, isDark: true  },
-    { content: Page05View, isDark: true  }
+    { content: Page01View },
+    { content: Page02View },
+    { content: Page03View },
+    { content: Page04View },
+    { content: Page05View }
 ];
 
 const buttons = [

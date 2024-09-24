@@ -13,17 +13,17 @@ import Page10View from './Secom/Page10.vue'
 import Page11View from './Secom/Page11.vue'
 
 const pages = [
-    { content: Page01View, isDark: true  },
-    { content: Page02View, isDark: true  },
-    { content: Page03View, isDark: true  },
-    { content: Page04View, isDark: true  },
-    { content: Page05View, isDark: true  },
-    { content: Page06View, isDark: true  },
-    { content: Page07View, isDark: true  },
-    { content: Page08View, isDark: true  },
-    { content: Page09View, isDark: true  },
-    { content: Page10View, isDark: true  },
-    { content: Page11View, isDark: true  },
+    { content: Page01View },
+    { content: Page02View },
+    { content: Page03View },
+    { content: Page04View },
+    { content: Page05View },
+    { content: Page06View },
+    { content: Page07View },
+    { content: Page08View },
+    { content: Page09View },
+    { content: Page10View },
+    { content: Page11View },
 ];
 
 const buttons : any = [];

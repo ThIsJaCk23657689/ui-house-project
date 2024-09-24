@@ -1,23 +1,21 @@
 <script setup lang="ts">
-import RouteButton from '@/components/RouteButton.vue';
 import { ref, computed, markRaw } from 'vue';
-import { ArrowRightIcon, ArrowLeftIcon } from '@heroicons/vue/24/solid';
-import ArrowReturnIcon from '../components/icons/ArrowReturnIcon.vue';
-import MaterialButton from '@/components/MaterialButton.vue';
 import { useRoute } from 'vue-router';
+import RouteButton from '@/components/RouteButton.vue';
+import MaterialButton from '@/components/MaterialButton.vue';
+import NextPrevButton from '@/components/NextPrevButton.vue';
 
 const route = useRoute();
 const props = defineProps<{
     pages: Array<{
-        content: any,
-        isDark: boolean
+        content: any
     }>,
     buttons: Array<{
         text: string,
         start: number,
         end: number
     }>
-}>()
+}>();
 
 
 // Side Menu
@@ -56,10 +54,6 @@ const currentButtonIndex = ref(0);
 
 const currentView = computed(() => {
     return markRaw(props.pages[currentPageIndex.value].content);
-});
-
-const currentDark = computed(() => {
-    return props.pages[currentPageIndex.value].isDark;
 });
 
 function PrevPage() {
@@ -119,37 +113,8 @@ function IsButtonVisible(index: number) {
             <component v-bind:is="currentView" :key="currentPageIndex"></component>
         </transition>
 
-        <div class="absolute right-20 bottom-8 flex flex-row justify-center items-center z-10">
-
-            <template v-if="currentDark">
-                <button class="w-9 h-9 flex justify-center items-center group transition-300-out"
-                    @click="PrevPage()">
-                    <ArrowLeftIcon class="h-6 w-6 text-zinc-500 group-hover:text-primary-200" />
-                </button>
-                <button class="w-9 h-9 flex justify-center items-center group transition-300-out"
-                        @click="NextPage()">
-                    <ArrowRightIcon class="h-6 w-6 text-zinc-500 group-hover:text-primary-200" />
-                </button>
-                <RouteButton :to="{ name: 'material-menu' }" class="ml-4 group">
-                    <ArrowReturnIcon class="h-6 w-6 text-zinc-500 group-hover:text-primary-200"/>
-                </RouteButton>
-            </template>
-
-            <template v-else>
-                <button class="w-9 h-9 flex justify-center items-center group transition-300-out"
-                    @click="PrevPage()">
-                    <ArrowLeftIcon class="h-6 w-6 text-blue-200 group-hover:text-zinc-500" />
-                </button>
-                <button class="w-9 h-9 flex justify-center items-center group transition-300-out"
-                        @click="NextPage()">
-                    <ArrowRightIcon class="h-6 w-6 text-blue-200 group-hover:text-zinc-500" />
-                </button>
-                <RouteButton :to="{ name: 'material-menu' }" class="ml-4 group">
-                    <ArrowReturnIcon class="h-6 w-6 text-blue-200 group-hover:text-zinc-500"/>
-                </RouteButton>
-            </template>
-
-        </div>
+        <!-- 下一頁、上一頁、回主選單按鈕 -->
+        <NextPrevButton :positionClass="'absolute right-20 bottom-8'" :routeTo="{ name: 'material-menu' }" @prev="PrevPage" @next="NextPage" />
     </div>
 
     <!-- 側邊選單 -->

@@ -14,17 +14,17 @@ import Page11View from './Lamett/Page11.vue'
 //import Page12View from './Lamett/Page12.vue'
 
 const pages = [
-    { content: Page01View, isDark: true  },
-    { content: Page02View, isDark: true  },
-    { content: Page03View, isDark: false },
-    { content: Page04View, isDark: true  },
-    { content: Page05View, isDark: false },
-    { content: Page06View, isDark: false },
-    { content: Page07View, isDark: false },
-    { content: Page08View, isDark: false },
-    { content: Page09View, isDark: false },
-    { content: Page10View, isDark: false },
-    { content: Page11View, isDark: false },
+    { content: Page01View },
+    { content: Page02View },
+    { content: Page03View },
+    { content: Page04View },
+    { content: Page05View },
+    { content: Page06View },
+    { content: Page07View },
+    { content: Page08View },
+    { content: Page09View },
+    { content: Page10View },
+    { content: Page11View },
     //{ content: Page12View, isDark: false },
 ];
 

@@ -3,7 +3,7 @@ import MaterialWrapper from '../../layouts/MaterialWrapper.vue'
 import Page01View from './Rinnai/Page01.vue'
 
 const pages = [
-    { content: Page01View, isDark: true },
+    { content: Page01View },
 ];
 
 const buttons = [

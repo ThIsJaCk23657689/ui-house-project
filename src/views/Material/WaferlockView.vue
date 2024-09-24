@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import MaterialWrapper from '../../layouts/MaterialWrapper.vue'
 import Page01View from './Waferlock/Page01.vue'
-import Page02View from './Waferlock/Page02.vue'
 
 const pages = [
-    { content: Page01View, isDark: true  },
-    //{ content: Page02View, isDark: true  }
+    { content: Page01View },
 ];
 
 const buttons = [

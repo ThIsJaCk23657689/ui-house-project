@@ -6,10 +6,10 @@ import Page03View from './Lifegear/Page03.vue'
 import Page04View from './Lifegear/Page04.vue'
 
 const pages = [
-    { content: Page01View, isDark: true  },
-    { content: Page02View, isDark: false },
-    { content: Page03View, isDark: true  },
-    { content: Page04View, isDark: true  },
+    { content: Page01View },
+    { content: Page02View },
+    { content: Page03View },
+    { content: Page04View },
 ];
 
 const buttons = [

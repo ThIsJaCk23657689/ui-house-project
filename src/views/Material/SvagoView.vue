@@ -8,12 +8,12 @@ import Page05View from './Svago/Page05.vue'
 import Page06View from './Svago/Page06.vue'
 
 const pages = [
-    { content: Page01View, isDark: true },
-    { content: Page02View, isDark: true },
-    { content: Page03View, isDark: true },
-    { content: Page04View, isDark: true },
-    { content: Page05View, isDark: true },
-    { content: Page06View, isDark: true },
+    { content: Page01View },
+    { content: Page02View },
+    { content: Page03View },
+    { content: Page04View },
+    { content: Page05View },
+    { content: Page06View },
 ];
 
 const buttons = [

@@ -5,9 +5,9 @@ import Page02View from './Daiken/Page02.vue'
 // import Page03View from './Daiken/Page03.vue'
 
 const pages = [
-    { content: Page01View, isDark: true  },
-    { content: Page02View, isDark: true  },
-    //{ content: Page03View, isDark: false }
+    { content: Page01View },
+    { content: Page02View },
+    //{ content: Page03View }
 ];
 
 const buttons = [
