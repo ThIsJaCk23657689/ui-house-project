@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <img src="@/assets/images/cases/sea/01.png" class="object-cover w-full h-full">
+    <img src="@/assets/images/cases/sea/04.png" class="object-cover w-full h-full">
 </template>
 
 <style scoped>
