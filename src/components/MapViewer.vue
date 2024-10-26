@@ -111,7 +111,7 @@ function closeModal() {
                 @mouseleave="stopDragging"
                 @mouseenter="handleMouseEnter"
                 @wheel="handleWheel">
-                <img :src="imageUrl" alt="Image" class="object-cover" />
+                <img :src="imageUrl" alt="Image" class="w-full object-cover" />
 
                 <template v-for="(spot, index) in spotData" :key="index">
                     <button v-if="spot.images.length !== 0" class="spot transition-300-out" 

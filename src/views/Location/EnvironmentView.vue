@@ -86,7 +86,7 @@ const stopMoving = () => {
 
         <div id="container" 
             class="relative w-full h-full flex justify-center items-center overflow-hidden">
-            <img ref="panoramaImage" src="@/assets/images/panorama.png" 
+            <img ref="panoramaImage" src="@/assets/images/panorama.gif" 
                 alt="" 
                 class="h-full transition-300-out"
                 :style="{ transform: imageTransform, maxWidth: 'none' }">
