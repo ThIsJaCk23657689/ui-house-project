@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import IconMagnifyingGlassPlus from '@/components/icons/IconMagnifyingGlassPlus.vue';
 import IconMagnifyingGlassMinus from '@/components/icons/IconMagnifyingGlassMinus.vue';
 import ImageModalViwer from '@/components/ImageModalViwer.vue';
+import UHouseMapMarker from '@/components/icons/UHouseMapMarker.vue';
 
 const props = defineProps<{
     imageUrl: string
@@ -122,6 +123,8 @@ function closeModal() {
                         :style="{ top: `${spot.top}%`, left: `${spot.left}%` }">
                     </button>
                 </template>
+
+                <UHouseMapMarker class="absolute" style="width: 12.5%; top: 59.3%; left: 27.4%" />
             </div>
         </div>
 
